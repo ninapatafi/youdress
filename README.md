@@ -24,38 +24,40 @@ Online Shoppers (Women's Fashion // Young Adult Focus)
 
 ![Mockup 1](readme-images/MOCKUP_1.png)
 
-List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented.
-
 Dress up doll Widget
--Provide base customizable dress up doll avatar widget, that can be toggled/hidden so as to allow user to focus on selecting items for purchase
--Provide category-specific layered outfit item SVG's on a dress up doll model that are put on/swapped/re-coloured/taken off by user inputs, which in-turn filter clothing items/products
--Dress up doll should persist from page to page and outfit information stored so user does not lose their outfit by navigating the website
+
+- Provide base customizable dress up doll avatar widget, that can be toggled/hidden so as to allow user to focus on selecting items for purchase
+- Provide category-specific layered outfit item SVG's on a dress up doll model that are put on/swapped/re-coloured/taken off by user inputs, which in-turn filter clothing items/products
+- Dress up doll should persist from page to page and outfit information stored so user does not lose their outfit by navigating the website
 
 Products Filter
--User may filter products by using dress up doll, or by manually selecting sidebar product filters i.e. dresses + maxi + yellow + under $15
+
+- User may filter products by using dress up doll, or by manually selecting sidebar product filters i.e. dresses + maxi + yellow + under $15
 
 Products Display
--Sorting feature so users may sort products by popularity/newness/price high to low/price low to high
--Buttons on each product card allow users to instantly add to cart, favourite, and put item-type on dress up doll
--Clicking product should bring up module/page of extra product information, as well as display add to cart & favourite buttons.
+
+- Sorting feature so users may sort products by popularity/newness/price high to low/price low to high
+- Buttons on each product card allow users to instantly add to cart, favourite, and put item-type on dress up doll
+- Clicking product should bring up module/page of extra product information, as well as display add to cart & favourite buttons.
 
 Page Navigation & Search Feature
--Nav bar will have logo link to homepage
 
+- Nav bar will have logo link to homepage
 - New button will link to New Products Page
 - Sale button will link to Sale Products Page
-  -Categories page will link to Categories Page
+- Categories page will link to Categories Page
 - Heart Icon will link to user Favourites Page
-  -user icon will link to either
-  -logged in profile
-  -option to sign up
-  -search button will expand and allow user to search product tags
-  -shopping cart icon will link Shopping Cart Page
+- user icon will link to either
+  - logged in profile
+  - option to sign up/log in
+- search button will expand and allow user to search product tags
+- shopping cart icon will link Shopping Cart Page
 
 Pages
--New/Sale/Category will filter products
--Favourites will filter saved products
--Shopping Cart will filter shopping cart purchases
+
+- New/Sale/Category will filter products
+- Favourites will filter saved products
+- Shopping Cart will filter shopping cart purchases
 
 ## Implementation
 
@@ -77,8 +79,8 @@ Pages
 ### APIs
 
 - Need to locate fashion retail API to populate site with products and check that filter system is viable
-  -Alternatively use ChatGPT + Mocky to get exact qualities I want from each fashion item (i.e. category/type/color/price/sizes)
-  -This will be a temporary measure, before building my own server
+- Alternatively use ChatGPT + Mocky to get exact qualities I want from each fashion item (i.e. category/type/color/price/sizes)
+- This will be a temporary measure, before building my own server
 
 ### Sitemap
 
@@ -94,11 +96,20 @@ Pages
 
 ### Mockups
 
--See first image in features
+See first image in features for New Page + Filtered Dress/Short items
+
+- [ ] Must add mockup of mobile/tablet/desktop of new Products page
+  - visually same as sale/home products page
+- [ ] Must add mockup of mobile/tablet/desktop of categories page
+- [ ] Must add mockup of mobile/tablet/desktop of favourites page
+- [ ] Must add mockup of mobile/tablet/desktop of shopping cart page
+- [ ] Must add mockup of mobile/tablet/desktop of register page
+- [ ] Must add mockup of mobile/tablet/desktop of login page
+- [ ] Must add mockup of mobile/tablet/desktop of user profile page
 
 ### Data
 
--Must add sql diagram
+![Data 1](readme-images/sql-db.png)
 
 ### Endpoints
 
@@ -126,7 +137,5 @@ SPRINT 3
 
 ## Nice-to-haves
 
-Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
-
-Log-in features
--Dress up doll outfits/ liked products/ shopping cart information saved to user profile
+- Log-in features optional
+- Dress up doll outfits saved to user profile
