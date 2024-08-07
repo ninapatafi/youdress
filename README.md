@@ -382,11 +382,23 @@ Response:
 
 ## Roadmap
 
-SPRINT 1 - BUILD OUT PAGES VISUALLY - IMPLEMENT API DATA (exisiting or mocky) -filters are NOT necessarily functional, products are placeholder images - BUILD OUT DRESSUP WIDGET//AVATAR BASE WITH SWAPPABLE HAIRS & FACES (minimum 2 each) AND IMPLEMENT FUNCTIONALITY (click left/right arrows to cycle through faces and hairs) - CREATE OUTFIT SVG ASSETS (2 dress (short/long), 3 top (tank, tshirt, long sleeve), 3 bottom (short/capris/pants), 3 shoe (sneaker/boot/flats), 2 outerwear (sweater/jacket)) AND IMPLEMENT FILTER-AS-SVG-SELECTION
+- SPRINT 1
 
-SPRINT 2 - BUILD SERVER to POPULATE APP WITH PRODUCTS WITH IDS AND FILTERABLE ATTRIBUTES - IMPLEMENT NAVIGATION OF SAVED ITEMS/SHOPPING CART/FILTERING OF PRODUCTS BY COLOR/PRICE/TYPE/NEW/SALE
+  - BUILD OUT PAGES VISUALLY
+  - IMPLEMENT API DATA (exisiting or mocky)
+  - filters are NOT necessarily functional, products are placeholder images
+  - BUILD OUT DRESSUP WIDGET//AVATAR BASE WITH SWAPPABLE HAIRS & FACES (minimum 2 each) AND IMPLEMENT FUNCTIONALITY (click left/right arrows to cycle through faces and hairs) - CREATE OUTFIT SVG ASSETS (2 dress (short/long), 3 top (tank, tshirt, long sleeve), 3 bottom (short/capris/pants), 3 shoe (sneaker/boot/flats), 2 outerwear (sweater/jacket)) AND IMPLEMENT FILTER-AS-SVG-SELECTION
 
-SPRINT 3 - IMPLEMENT REGISTER/LOG-IN/JWT TOKENS - FIX ISSUES WITH STYLING - FIX ISSUES WITH FILTERING - FIX ISSUES WITH ROUTING - FIX ISSUES WITH AXIOS CALLS
+- SPRINT 2
+
+  - BUILD SERVER to POPULATE APP WITH PRODUCTS WITH IDS AND FILTERABLE ATTRIBUTES
+  - IMPLEMENT NAVIGATION OF SAVED ITEMS/SHOPPING CART/FILTERING OF PRODUCTS BY COLOR/PRICE/TYPE/NEW/SALE
+
+- SPRINT 3
+  - IMPLEMENT REGISTER/LOG-IN/JWT TOKENS
+  - FIX ISSUES WITH STYLING
+  - FIX ISSUES WITH FILTERING - FIX ISSUES WITH ROUTING
+  - FIX ISSUES WITH AXIOS CALLS
 
 ## Nice-to-haves
 
