@@ -21,7 +21,7 @@ YouDress attempts to bring the physical "try-on" experience found in a physical 
 
 ### Features
 
-![Mockup 1](src/assets/mockups/MOCKUP_1.png)
+![Mockup 1](readme-images/MOCKUP_1.png)
 
 List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented.
 
