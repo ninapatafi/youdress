@@ -14,10 +14,11 @@ YouDress attempts to bring the physical "try-on" experience found in a physical 
 ### User Profile
 
 Online Shoppers (Women's Fashion // Young Adult Focus)
-+Women ages 25-34 (highest preference for online shopping, potential nostalgia for early internet era dress up games)
-+Women ages 18-25 (likely to be mobile users)
-+Middle to upper class
-+Likely use either Snapchat/Instagram/Twitter/Pinterest for fashion information
+
+- Women ages 25-34 (highest preference for online shopping, potential nostalgia for early internet era dress up games)
+- Women ages 18-25 (likely to be mobile users)
+- Middle to upper class
+- Likely use either Snapchat/Instagram/Twitter/Pinterest for fashion information
 
 ### Features
 
