@@ -1,11 +1,14 @@
+@use "../../styles/partials/variables" as *;
+
 .dress-up-widget {
   display: flex;
+  // max-height: 500px;
 }
 
 .dress-up {
   background-color: darkgray;
   max-width: 30vw;
-  height: 65vh;
+  // height: 65vh;
   display: flex;
   flex-direction: column;
   &__wrapper {
@@ -16,7 +19,7 @@
     background-color: aqua;
   }
   &__doll {
-    margin: auto;
+    margin: 1rem;
   }
 }
 

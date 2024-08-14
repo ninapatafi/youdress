@@ -1,0 +1,16 @@
+.products-container {
+  //   height: 466px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  overflow-y: scroll;
+  margin: 0 1rem;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: beige;
+  max-width: 200px;
+  //   flex: 1 1 calc(25% - 1rem); // Responsive width, adjust 25% to control the number of items per row
+}

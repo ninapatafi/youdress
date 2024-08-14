@@ -20,6 +20,8 @@ function DressUpWidget() {
           className="dress-up__doll"
           src="https://placehold.co/200x400"
         ></img>
+        <button>Reset</button>
+        <button>Randomize</button>
       </div>
       <div className="filter-category">
         <h5>category name placeholder</h5>
