@@ -1,0 +1,17 @@
+.dress-up {
+  background-color: darkgray;
+  max-width: 30vw;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  &__wrapper {
+    display: flex;
+  }
+  &__title {
+    margin: auto;
+    background-color: aqua;
+  }
+  &__doll {
+    margin: auto;
+  }
+}

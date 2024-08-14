@@ -1,0 +1,22 @@
+header {
+  background-color: lightgray;
+  height: 10vh;
+  display: flex;
+  //   justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lefthand,
+.righthand {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+}
