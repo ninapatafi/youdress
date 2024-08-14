@@ -1,3 +1,7 @@
+.dress-up-widget {
+  display: flex;
+}
+
 .dress-up {
   background-color: darkgray;
   max-width: 30vw;
@@ -14,4 +18,20 @@
   &__doll {
     margin: auto;
   }
+}
+
+.filter-category {
+  display: flex;
+  flex-direction: column;
+  max-width: 10vw;
+  background-color: darkgrey;
+}
+
+.filter-subcategory {
+  background-color: lightgray;
+}
+
+.size-selection {
+  display: flex;
+  flex-direction: column;
 }
