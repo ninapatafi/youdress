@@ -4,7 +4,7 @@ import { useState } from "react";
 function DressUpWidget() {
   const [dropDown, setDropDown] = useState(true);
   const toggleDropDown = () => {
-    setDropDown(false);
+    setDropDown((prevState) => !prevState);
   };
 
   return (
@@ -18,7 +18,7 @@ function DressUpWidget() {
         </div>
         <img
           className="dress-up__doll"
-          src="https://placehold.co/200x400"
+          src="https://placehold.co/250x400"
         ></img>
         <button>Reset</button>
         <button>Randomize</button>
