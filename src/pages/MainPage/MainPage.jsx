@@ -26,7 +26,7 @@ function MainPage({
       setSelectedSubcategory(subcategory || null);
       didRunRef.current = true;
     }
-  }, [category, subcategory]);
+  }, [category, subcategory]); //query updated
 
   useEffect(() => {
     if (selectedCategory) {
@@ -38,7 +38,7 @@ function MainPage({
     } else {
       navigate(`/`);
     }
-  }, [selectedCategory, selectedSubcategory]);
+  }, [selectedCategory, selectedSubcategory, navigate]);
 
   //   const filteredProducts = products.filter((product) => {
   //     return (
