@@ -17,8 +17,8 @@ function MainPage({
   //   const [selectedCategory, setSelectedCategory] = useState("");
   //   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const didRunRef = useRef(false);
-  console.log("subcat", subcategory);
-  console.log("cat", category);
+  console.log("subcategory", subcategory);
+  console.log("category", category);
 
   useEffect(() => {
     if (!didRunRef.current) {

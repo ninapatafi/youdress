@@ -1,19 +1,22 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import "./App.scss";
+
 import Header from "./components/Header/Header.jsx";
 import AddressGuide from "./components/AddressGuide/AddressGuide.jsx";
-// import DressUpWidget from "./components/DressUpWidget/DressUpWidget.jsx";
-// import ProductsList from "./components/ProductsList/ProductsList.jsx";
 import MainPage from "./pages/MainPage/MainPage.jsx";
 import ShoppingCartPage from "./pages/ShoppingCartPage/ShoppingCartPage.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+
 import productsData from "./data/products.json";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+
   const products = productsData;
+
   const filteredProducts = products.filter((product) => {
     return (
       (selectedCategory && selectedCategory !== ""
