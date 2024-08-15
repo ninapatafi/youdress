@@ -2,20 +2,15 @@ import "./DressUpWidget.scss";
 import { useState } from "react";
 import DressUpDoll from "../DressUpDoll/DressUpDoll.jsx";
 
-function DressUpWidget({ products }) {
+function DressUpWidget({
+  products,
+  selectedCategory,
+  setSelectedCategory,
+  selectedSubcategory,
+  setSelectedSubcategory,
+}) {
   const [isOpen, setIsOpen] = useState(true);
   const [showButton, setShowButton] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("Select A Category");
-  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
-
-  // const categories = {
-  //   dresses: ["Short", "Long", "Maxi"],
-  //   tops: ["Tube", "Tank", "T-shirt", "Long-Sleeve"],
-  //   bottoms: ["Shorts", "Pants", "Skirts"],
-  //   outerwear: ["Jackets", "Sweaters"],
-  //   shoes: ["Sandals", "Sneakers", "Boots", "Heels", "Flats"],
-  //   bagsPurses: ["Bags", "Wallets"],
-  // };
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
