@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useParams, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import axios from "axios";
 import "./App.scss";
 
 import Header from "./components/Header/Header.jsx";
@@ -9,22 +9,30 @@ import MainPage from "./pages/MainPage/MainPage.jsx";
 import ShoppingCartPage from "./pages/ShoppingCartPage/ShoppingCartPage.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
-import productsData from "./data/products.json";
+// import productsData from "./data/products.json";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  // const products = productsData;
+  const [products, setProducts] = useState([]);
 
-  const products = productsData;
-
-  const filteredProducts = products.filter((product) => {
-    return (
-      (selectedCategory && selectedCategory !== ""
-        ? product.category === selectedCategory
-        : true) &&
-      (selectedSubcategory ? product.subcategory === selectedSubcategory : true)
-    );
-  });
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const productsResponse = await axios.get(
+          `http://localhost:5050/products`
+        );
+        console.log("products response", productsResponse.data);
+        setFilteredProducts(productsResponse.data);
+        setProducts(productsResponse.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getProducts();
+  }, []);
 
   return (
     <BrowserRouter>
@@ -42,6 +50,7 @@ function App() {
               setSelectedSubcategory={setSelectedSubcategory}
               products={products}
               filteredProducts={filteredProducts}
+              setFilteredProducts={setFilteredProducts}
             />
           }
         />
@@ -55,6 +64,7 @@ function App() {
               setSelectedSubcategory={setSelectedSubcategory}
               products={products}
               filteredProducts={filteredProducts}
+              setFilteredProducts={setFilteredProducts}
             />
           }
         />
@@ -68,6 +78,7 @@ function App() {
               setSelectedSubcategory={setSelectedSubcategory}
               products={products}
               filteredProducts={filteredProducts}
+              setFilteredProducts={setFilteredProducts}
             />
           }
         />

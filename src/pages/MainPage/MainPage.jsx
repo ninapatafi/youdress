@@ -11,11 +11,13 @@ function MainPage({
   setSelectedSubcategory,
   products,
   filteredProducts,
+  setFilteredProducts,
 }) {
   const { category, subcategory } = useParams();
   const navigate = useNavigate();
   //   const [selectedCategory, setSelectedCategory] = useState("");
   //   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+
   const didRunRef = useRef(false);
   console.log("subcategory", subcategory);
   console.log("category", category);
@@ -35,17 +37,33 @@ function MainPage({
       } else {
         navigate(`/${selectedCategory}`);
       }
+      setFilteredProducts(
+        products.filter(
+          (product) =>
+            product.category === selectedCategory &&
+            product.subcategory === selectedSubcategory
+        )
+      );
     } else {
       navigate(`/`);
     }
   }, [selectedCategory, selectedSubcategory, navigate]);
 
-  //   const filteredProducts = products.filter((product) => {
-  //     return (
-  //       (selectedCategory ? product.category === selectedCategory : true) &&
-  //       (selectedSubcategory ? product.subcategory === selectedSubcategory : true)
-  //     );
-  //   });
+  // products.filter((product) => {
+  //   return (
+  //     (selectedCategory ? product.category === selectedCategory : true) &&
+  //     (selectedSubcategory ? product.subcategory === selectedSubcategory : true)
+  //   );
+  // });
+
+  // const filteredProducts = products.filter((product) => {
+  //   return (
+  //     (selectedCategory && selectedCategory !== ""
+  //       ? product.category === selectedCategory
+  //       : true) &&
+  //     (selectedSubcategory ? product.subcategory === selectedSubcategory : true)
+  //   );
+  // });
 
   return (
     <div className="side-by-side">

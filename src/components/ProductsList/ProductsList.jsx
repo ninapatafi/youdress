@@ -20,7 +20,12 @@ function ProductsList({ filteredProducts }) {
       {filteredProducts.slice(0, visibleProducts).map((product) => (
         <div className="product-list" key={product.id}>
           <div className="product-card">
-            <img src="https://placehold.co/200" />
+            <div className="image-container">
+              <img
+                className="image-container__img"
+                src={`http://localhost:5050/${product.image_url}`}
+              />
+            </div>
             <button>cart</button>
             <h4>{product.product_name}</h4>
             <p>{product.description}</p>
