@@ -2,13 +2,20 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import DressUpWidget from "../../components/DressUpWidget/DressUpWidget.jsx";
 import ProductsList from "../../components/ProductsList/ProductsList.jsx";
-import products from "../../data/products.json";
+// import products from "../../data/products.json";
 
-function MainPage() {
+function MainPage({
+  selectedCategory,
+  setSelectedCategory,
+  selectedSubcategory,
+  setSelectedSubcategory,
+  products,
+  filteredProducts,
+}) {
   const { category, subcategory } = useParams();
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+  //   const [selectedCategory, setSelectedCategory] = useState("");
+  //   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const didRunRef = useRef(false);
   console.log("subcat", subcategory);
   console.log("cat", category);
@@ -33,12 +40,12 @@ function MainPage() {
     }
   }, [selectedCategory, selectedSubcategory]);
 
-  const filteredProducts = products.filter((product) => {
-    return (
-      (selectedCategory ? product.category === selectedCategory : true) &&
-      (selectedSubcategory ? product.subcategory === selectedSubcategory : true)
-    );
-  });
+  //   const filteredProducts = products.filter((product) => {
+  //     return (
+  //       (selectedCategory ? product.category === selectedCategory : true) &&
+  //       (selectedSubcategory ? product.subcategory === selectedSubcategory : true)
+  //     );
+  //   });
 
   return (
     <div className="side-by-side">

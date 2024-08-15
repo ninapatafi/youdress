@@ -7,20 +7,20 @@ import AddressGuide from "./components/AddressGuide/AddressGuide.jsx";
 // import ProductsList from "./components/ProductsList/ProductsList.jsx";
 import MainPage from "./pages/MainPage/MainPage.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import products from "./data/products.json";
+import productsData from "./data/products.json";
 
 function App() {
-  // const [selectedCategory, setSelectedCategory] = useState("Select A Category");
-  // const [selectedSubcategory, setSelectedSubcategory] = useState(null);
-
-  // const filteredProducts = products.filter((product) => {
-  //   return (
-  //     (selectedCategory && selectedCategory !== "Select A Category"
-  //       ? product.category === selectedCategory
-  //       : true) &&
-  //     (selectedSubcategory ? product.subcategory === selectedSubcategory : true)
-  //   );
-  // });
+  const [selectedCategory, setSelectedCategory] = useState("Select A Category");
+  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+  const products = productsData;
+  const filteredProducts = products.filter((product) => {
+    return (
+      (selectedCategory && selectedCategory !== "Select A Category"
+        ? product.category === selectedCategory
+        : true) &&
+      (selectedSubcategory ? product.subcategory === selectedSubcategory : true)
+    );
+  });
 
   return (
     <BrowserRouter>
@@ -28,9 +28,45 @@ function App() {
       <Header />
       <AddressGuide />
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/:category" element={<MainPage />} />
-        <Route path="/:category/:subcategory" element={<MainPage />} />
+        <Route
+          path="/"
+          element={
+            <MainPage
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+              selectedSubcategory={selectedSubcategory}
+              setSelectedSubcategory={setSelectedSubcategory}
+              products={products}
+              filteredProducts={filteredProducts}
+            />
+          }
+        />
+        <Route
+          path="/:category"
+          element={
+            <MainPage
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+              selectedSubcategory={selectedSubcategory}
+              setSelectedSubcategory={setSelectedSubcategory}
+              products={products}
+              filteredProducts={filteredProducts}
+            />
+          }
+        />
+        <Route
+          path="/:category/:subcategory"
+          element={
+            <MainPage
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+              selectedSubcategory={selectedSubcategory}
+              setSelectedSubcategory={setSelectedSubcategory}
+              products={products}
+              filteredProducts={filteredProducts}
+            />
+          }
+        />
         <Route path="*" element={<div>404 Page Not Found</div>} />
       </Routes>
       <Footer />
