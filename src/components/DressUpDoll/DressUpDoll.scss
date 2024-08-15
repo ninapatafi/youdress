@@ -1,0 +1,19 @@
+@use "../../styles/partials/variables" as *;
+
+.dress-up {
+  background-color: $orange;
+  max-width: 30vw;
+  // height: 65vh;
+  display: flex;
+  flex-direction: column;
+  &__wrapper {
+    display: flex;
+  }
+  &__title {
+    margin: auto;
+    background-color: aqua;
+  }
+  &__doll {
+    margin: 1rem;
+  }
+}

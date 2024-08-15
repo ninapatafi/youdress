@@ -1,28 +1,33 @@
 import "./DressUpWidget.scss";
 import { useState } from "react";
+import DressUpDoll from "../DressUpDoll/DressUpDoll.jsx";
 
 function DressUpWidget() {
-  const [dropDown, setDropDown] = useState(true);
-  const toggleDropDown = () => {
-    setDropDown((prevState) => !prevState);
+  const [isOpen, setIsOpen] = useState(true);
+  const [showButton, setShowButton] = useState(false);
+
+  const toggleWidget = () => {
+    setIsOpen(!isOpen);
+    setShowButton(isOpen);
   };
 
   return (
     <div className="dress-up-widget">
-      <div className="dress-up">
-        <div className="dress-up__wrapper">
-          <h4 className="dress-up__title">Dress Up Doll</h4>
-          <button onClick={toggleDropDown} className="dress-up__toggle">
-            toggle
-          </button>
-        </div>
-        <img
-          className="dress-up__doll"
-          src="https://placehold.co/250x400"
-        ></img>
-        <button>Reset</button>
-        <button>Randomize</button>
-      </div>
+      <button
+        className={`${showButton ? "button-true" : "button-false"}`}
+        onClick={toggleWidget}
+      >
+        <span className="button-true__text">Dress Up Doll</span>
+      </button>
+
+      {isOpen && (
+        <DressUpDoll
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setShowButton={setShowButton}
+        />
+      )}
+
       <div className="filter-category">
         <h5>category name placeholder</h5>
         <button>button1</button>

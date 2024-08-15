@@ -5,33 +5,28 @@
   // max-height: 500px;
 }
 
-.dress-up {
-  background-color: darkgray;
-  max-width: 30vw;
-  // height: 65vh;
-  display: flex;
-  flex-direction: column;
-  &__wrapper {
-    display: flex;
+.button-true {
+  display: block;
+  &__text {
+    // display: inline-block;
+    transform: rotate(-90deg);
+    // color: red;
   }
-  &__title {
-    margin: auto;
-    background-color: aqua;
-  }
-  &__doll {
-    margin: 1rem;
-  }
+}
+
+.button-false {
+  display: none;
 }
 
 .filter-category {
   display: flex;
   flex-direction: column;
   max-width: 10vw;
-  background-color: darkgrey;
+  background-color: $pink;
 }
 
 .filter-subcategory {
-  background-color: lightgray;
+  background-color: $light-pink;
 }
 
 .size-selection {

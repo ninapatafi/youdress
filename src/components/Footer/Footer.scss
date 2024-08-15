@@ -1,4 +1,7 @@
+@use "../../styles/partials/variables" as *;
+
 .footer {
-  background-color: grey;
+  background-color: $dark-pink-alt;
+  color: $white-true;
   height: 30vh;
 }
