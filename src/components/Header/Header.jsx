@@ -2,7 +2,7 @@ import heartSVG from "../../assets/icons/heart.svg";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 
-function Header() {
+function Header({}) {
   return (
     <header>
       <nav>
@@ -22,6 +22,13 @@ function Header() {
           <button>
             <h3>categories</h3>
           </button>
+          {/* <ul className="dropdown-menu">
+            {categories.map((category) => (
+              <li key={category} className="dropdown-item">
+                {category}
+              </li>
+            ))}
+          </ul> */}
         </div>
         <div className="righthand">
           <img src={heartSVG} width="40" />

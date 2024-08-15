@@ -11,12 +11,12 @@ import Footer from "./components/Footer/Footer.jsx";
 import productsData from "./data/products.json";
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState("Select A Category");
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const products = productsData;
   const filteredProducts = products.filter((product) => {
     return (
-      (selectedCategory && selectedCategory !== "Select A Category"
+      (selectedCategory && selectedCategory !== ""
         ? product.category === selectedCategory
         : true) &&
       (selectedSubcategory ? product.subcategory === selectedSubcategory : true)

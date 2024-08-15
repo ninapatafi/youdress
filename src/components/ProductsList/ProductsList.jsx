@@ -9,9 +9,11 @@ function ProductsList({ filteredProducts }) {
   };
   if (!filteredProducts) {
     <div>Loading...</div>;
+    return;
   }
   if (filteredProducts.length === 0) {
     <div>No products of this type currently avaliable</div>;
+    return;
   }
   return (
     <div className="products-container">
