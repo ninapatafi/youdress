@@ -23,23 +23,18 @@ function App() {
   // });
 
   return (
-    <>
+    <BrowserRouter>
+      <div>placeholder for a banner</div>
       <Header />
       <AddressGuide />
-      <MainPage />
-      {/* <div className="side-by-side">
-        <DressUpWidget
-          products={products}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          selectedSubcategory={selectedSubcategory}
-          setSelectedSubcategory={setSelectedSubcategory}
-        />
-        <ProductsList filteredProducts={filteredProducts || []} />
-      </div> */}
-
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/:category" element={<MainPage />} />
+        <Route path="/:category/:subcategory" element={<MainPage />} />
+        <Route path="*" element={<div>404 Page Not Found</div>} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

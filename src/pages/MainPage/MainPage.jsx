@@ -1,18 +1,41 @@
-import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 import DressUpWidget from "../../components/DressUpWidget/DressUpWidget.jsx";
 import ProductsList from "../../components/ProductsList/ProductsList.jsx";
 import products from "../../data/products.json";
 
 function MainPage() {
-  const [selectedCategory, setSelectedCategory] = useState("Select A Category");
+  const { category, subcategory } = useParams();
+  const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+  const didRunRef = useRef(false);
+  console.log("subcat", subcategory);
+  console.log("cat", category);
+
+  useEffect(() => {
+    if (!didRunRef.current) {
+      setSelectedCategory(category || "");
+      setSelectedSubcategory(subcategory || null);
+      didRunRef.current = true;
+    }
+  }, [category, subcategory]);
+
+  useEffect(() => {
+    if (selectedCategory) {
+      if (selectedSubcategory) {
+        navigate(`/${selectedCategory}/${selectedSubcategory}`);
+      } else {
+        navigate(`/${selectedCategory}`);
+      }
+    } else {
+      navigate(`/`);
+    }
+  }, [selectedCategory, selectedSubcategory]);
 
   const filteredProducts = products.filter((product) => {
     return (
-      (selectedCategory && selectedCategory !== "Select A Category"
-        ? product.category === selectedCategory
-        : true) &&
+      (selectedCategory ? product.category === selectedCategory : true) &&
       (selectedSubcategory ? product.subcategory === selectedSubcategory : true)
     );
   });
