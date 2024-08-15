@@ -6,6 +6,7 @@ import AddressGuide from "./components/AddressGuide/AddressGuide.jsx";
 // import DressUpWidget from "./components/DressUpWidget/DressUpWidget.jsx";
 // import ProductsList from "./components/ProductsList/ProductsList.jsx";
 import MainPage from "./pages/MainPage/MainPage.jsx";
+import ShoppingCartPage from "./pages/ShoppingCartPage/ShoppingCartPage.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import productsData from "./data/products.json";
 
@@ -67,6 +68,8 @@ function App() {
             />
           }
         />
+        <Route path="/cart" element={<ShoppingCartPage />} />
+
         <Route path="*" element={<div>404 Page Not Found</div>} />
       </Routes>
       <Footer />
