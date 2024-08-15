@@ -7,6 +7,7 @@ import AddressGuide from "./components/AddressGuide/AddressGuide.jsx";
 import DressUpWidget from "./components/DressUpWidget/DressUpWidget.jsx";
 import ProductsList from "./components/ProductsList/ProductsList.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import products from "./data/products.json";
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
       <Header />
       <AddressGuide />
       <div className="side-by-side">
-        <DressUpWidget />
-        <ProductsList />
+        <DressUpWidget products={products} />
+        <ProductsList products={products} />
       </div>
 
       <Footer />

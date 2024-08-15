@@ -1,12 +1,15 @@
 import "./ProductsList.scss";
-import products from "../../data/products.json";
+// import products from "../../data/products.json";
 import { useState } from "react";
 
-function ProductsList() {
+function ProductsList({ products }) {
   const [visibleProducts, setVisibleProducts] = useState(9);
   const loadProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 18);
   };
+  if (!products) {
+    <div>loading products</div>;
+  }
   return (
     <div className="products-container">
       {products.slice(0, visibleProducts).map((product) => (

@@ -2,20 +2,20 @@ import "./DressUpWidget.scss";
 import { useState } from "react";
 import DressUpDoll from "../DressUpDoll/DressUpDoll.jsx";
 
-function DressUpWidget() {
+function DressUpWidget({ products }) {
   const [isOpen, setIsOpen] = useState(true);
   const [showButton, setShowButton] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Select A Category");
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
 
-  const categories = {
-    dresses: ["Short", "Long", "Maxi"],
-    tops: ["Tube", "Tank", "T-shirt", "Long-Sleeve"],
-    bottoms: ["Shorts", "Pants", "Skirts"],
-    outerwear: ["Jackets", "Sweaters"],
-    shoes: ["Sandals", "Sneakers", "Boots", "Heels", "Flats"],
-    bagsPurses: ["Bags", "Wallets"],
-  };
+  // const categories = {
+  //   dresses: ["Short", "Long", "Maxi"],
+  //   tops: ["Tube", "Tank", "T-shirt", "Long-Sleeve"],
+  //   bottoms: ["Shorts", "Pants", "Skirts"],
+  //   outerwear: ["Jackets", "Sweaters"],
+  //   shoes: ["Sandals", "Sneakers", "Boots", "Heels", "Flats"],
+  //   bagsPurses: ["Bags", "Wallets"],
+  // };
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -31,6 +31,27 @@ function DressUpWidget() {
     setIsOpen(!isOpen);
     setShowButton(isOpen);
   };
+
+  const extractCategories = (products) => {
+    const categories = {};
+    products.forEach((product) => {
+      const { category, subcategory } = product;
+      if (!categories[category]) {
+        categories[category] = new Set();
+      }
+      categories[category].add(subcategory);
+    });
+
+    Object.keys(categories).forEach((category) => {
+      categories[category] = Array.from(categories[category]);
+    });
+
+    return categories;
+  };
+
+  const categories = extractCategories(products);
+  console.log(categories);
+  // console.log(subcategories);
 
   return (
     <div className="dress-up-widget">
@@ -55,7 +76,7 @@ function DressUpWidget() {
           {categories[selectedCategory] ? (
             categories[selectedCategory].map((subcategory) => (
               <li key={subcategory}>
-                {" "}
+                {/* {" "} */}
                 <button onClick={() => handleSubcategoryClick(subcategory)}>
                   {subcategory}
                 </button>
