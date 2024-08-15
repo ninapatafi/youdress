@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 
 header {
-  background-color: lightgray;
+  background-color: $blue;
   height: 10vh;
   display: flex;
   //   justify-content: space-between;
