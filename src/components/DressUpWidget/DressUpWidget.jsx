@@ -5,6 +5,27 @@ import DressUpDoll from "../DressUpDoll/DressUpDoll.jsx";
 function DressUpWidget() {
   const [isOpen, setIsOpen] = useState(true);
   const [showButton, setShowButton] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("Select A Category");
+  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+
+  const categories = {
+    dresses: ["Short", "Long", "Maxi"],
+    tops: ["Tube", "Tank", "T-shirt", "Long-Sleeve"],
+    bottoms: ["Shorts", "Pants", "Skirts"],
+    outerwear: ["Jackets", "Sweaters"],
+    shoes: ["Sandals", "Sneakers", "Boots", "Heels", "Flats"],
+    bagsPurses: ["Bags", "Wallets"],
+  };
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    setSelectedSubcategory(null); // Reset subcategory when category changes
+  };
+
+  const handleSubcategoryClick = (subcategory) => {
+    setSelectedSubcategory(subcategory);
+    // Here you would apply the filter logic to filter your items
+  };
 
   const toggleWidget = () => {
     setIsOpen(!isOpen);
@@ -28,30 +49,56 @@ function DressUpWidget() {
         />
       )}
 
-      <div className="filter-category">
-        <h5>category name placeholder</h5>
-        <button>button1</button>
-        <button>button2</button>
-        <button>button3</button>
-      </div>
       <div className="filter-subcategory">
+        <h5>{selectedCategory} </h5>
+        <ul>
+          {categories[selectedCategory] ? (
+            categories[selectedCategory].map((subcategory) => (
+              <li key={subcategory}>
+                {" "}
+                <button onClick={() => handleSubcategoryClick(subcategory)}>
+                  {subcategory}
+                </button>
+              </li>
+            ))
+          ) : (
+            <li>Select A Subcategory</li>
+          )}
+        </ul>
+      </div>
+      <div className="filter-category">
         <div>
           <h5>category</h5>
-          <h6>dresses</h6>
-          <h6>tops</h6>
-          <h6>bottoms</h6>
-          <h6>outerwear</h6>
-          <h6>shoes</h6>
-          <h6>bags & purses</h6>
+          {Object.keys(categories).map((category) => (
+            <h6 key={category} onClick={() => handleCategoryClick(category)}>
+              <button>{category}</button>
+            </h6>
+          ))}
         </div>
         <div>
-          <h5>color</h5>
+          <h5 className="color">color</h5>
+          <div className="color__wrapper">
+            <button className="color__black color__button " />
+            <button className="color__white color__button " />
+            <button className="color__grey color__button " />
+            <button className="color__red color__button " />
+            <button className="color__blue color__button " />
+            <button className="color__yellow color__button " />
+            <button className="color__pink color__button " />
+            <button className="color__green color__button " />
+            <button className="color__brown color__button " />
+            <button className="color__purple color__button " />
+            <button className="color__orange color__button " />
+          </div>
         </div>
         <div className="size-selection">
           <h5>size</h5>
-          <button>button1</button>
-          <button>button2</button>
-          <button>button3</button>
+          <button>XS</button>
+          <button>S</button>
+          <button>M</button>
+          <button>L</button>
+          <button>XL</button>
+          <button>XXL</button>
         </div>
         <div>
           <h5>price</h5>

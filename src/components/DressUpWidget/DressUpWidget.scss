@@ -33,3 +33,63 @@
   display: flex;
   flex-direction: column;
 }
+
+.color {
+  // &__wrapper {
+  // display: flex;
+  // flex-direction: row;
+  // gap: 1rem;
+  // }
+
+  &__button {
+    border: none;
+    outline: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+  }
+
+  &__black {
+    background-color: black;
+  }
+
+  &__white {
+    background-color: white;
+  }
+
+  &__grey {
+    background-color: grey;
+  }
+
+  &__red {
+    background-color: red;
+  }
+
+  &__blue {
+    background-color: blue;
+  }
+
+  &__yellow {
+    background-color: yellow;
+  }
+
+  &__pink {
+    background-color: hotpink;
+  }
+
+  &__green {
+    background-color: green;
+  }
+
+  &__brown {
+    background-color: brown;
+  }
+
+  &__purple {
+    background-color: purple;
+  }
+
+  &__orange {
+    background-color: darkorange;
+  }
+}
