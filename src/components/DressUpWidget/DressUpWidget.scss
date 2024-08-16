@@ -6,10 +6,13 @@
 }
 
 .button-true {
-  display: block;
+  display: flex;
+  background-color: $green;
+  border: 2.5px $white solid;
   &__text {
     // display: inline-block;
-    transform: rotate(-90deg);
+    // transform: rotate(-90deg);
+    max-width: 8vw;
     // color: red;
   }
 }

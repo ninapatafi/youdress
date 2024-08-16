@@ -1,18 +1,40 @@
 @use "../../styles/partials/variables" as *;
 
 .dress-up {
-  background-color: $black;
+  padding-top: 1rem;
+  background-color: $white;
   max-width: 30vw;
   // height: 65vh;
   display: flex;
   flex-direction: column;
   &__wrapper {
     display: flex;
+    flex-direction: column;
   }
   &__title {
-    margin: auto;
-    background-color: aqua;
+    // width: 100%;
+    margin: 0 5px;
+    color: $black;
+    // display: block;
+    font-size: 18px;
+    text-align: center;
+    // padding: 10px;
   }
+
+  &__toggle {
+    // color: $white;
+
+    min-width: 25px;
+    padding: 6px 15px;
+    border: 2.5px $white solid;
+    border-radius: 50px;
+    background-color: $green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+  }
+
   &__doll {
     margin: 1rem;
   }

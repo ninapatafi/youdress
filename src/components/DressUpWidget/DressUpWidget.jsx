@@ -54,7 +54,7 @@ function DressUpWidget({
         className={`${showButton ? "button-true" : "button-false"}`}
         onClick={toggleWidget}
       >
-        <span className="button-true__text">Dress Up Doll</span>
+        <span className="button-true__text">Click for Dress Up Doll</span>
       </button>
 
       {isOpen && (

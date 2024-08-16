@@ -1,24 +1,78 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
 
-header {
+.header {
   background-color: $blue;
-  height: 10vh;
-  display: flex;
+  // height: 10vh;
+  // display: flex;
   //   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
 }
 
-nav {
+.nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  height: 18vh;
+  padding: 10px;
+  @include tablet {
+    height: 10vh;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-.lefthand,
-.righthand {
-  display: flex;
+.lefthand-container,
+.righthand-container {
+  @include tablet {
+    display: flex;
+    gap: 8px;
+  }
+}
+.lefthand-container {
+  @include tablet {
+    gap: 16px;
+  }
 }
 
 .logo {
   display: flex;
+  &__back-link {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.icon {
+  width: 40px;
+  @include tablet {
+    width: 30px;
+  }
+}
+
+.filter-pages {
+  display: flex;
+  gap: 8px;
+  line-height: 0;
+}
+
+.button-pages {
+  color: $white;
+  min-width: 60px;
+  padding: 8px 15px;
+  // text-align: center;
+  border: 2.5px $white solid;
+  border-radius: 50px;
+  background-color: $orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+  }
 }

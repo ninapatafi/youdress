@@ -1,9 +1,14 @@
 @use "./styles/partials/variables" as *;
+@use "./styles/partials/typography" as *;
 
 html {
   box-sizing: border-box;
   background-color: $white;
   color: $black;
+}
+
+body {
+  font-family: "Dosis", sans-serif;
 }
 
 *,
@@ -16,6 +21,22 @@ html {
 ul {
   padding: 0;
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+  &:visited,
+  :hover,
+  :focus,
+  :active {
+    text-decoration: none;
+  }
+}
+
+button {
+  font-family: "Dosis", sans-serif;
+  // font-weight: 700;
 }
 
 .side-by-side {

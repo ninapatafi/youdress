@@ -36,9 +36,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>placeholder for a banner</div>
+      {/* <div>placeholder for a banner</div> */}
       <Header />
-      <AddressGuide />
+      {/* <AddressGuide /> */}
       <Routes>
         <Route
           path="/"

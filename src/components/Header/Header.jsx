@@ -1,27 +1,35 @@
 import heartSVG from "../../assets/icons/heart.svg";
+import accountSVG from "../../assets/icons/account.svg";
+import cartSVG from "../../assets/icons/cart.svg";
+import searchSVG from "../../assets/icons/search.svg";
+import sparkleSVG from "../../assets/icons/sparkles.svg";
+import starSVG from "../../assets/icons/star.svg";
+
 import { Link } from "react-router-dom";
 import "./Header.scss";
 
 function Header({}) {
   return (
-    <header>
-      <nav>
-        <div className="lefthand">
+    <header className="header">
+      <nav className="nav">
+        <div className="lefthand-container">
           <div className="logo">
-            {/* <Link className="back-link" to="/"> */}
-            <img src="https://placehold.co/30"></img>
-            <h2>YouDress</h2>
-            {/* </Link> */}
+            <Link className="logo__back-link" to="/">
+              <img className="logo__icon icon" src={starSVG} width="40"></img>
+              <h2 className="logo__title">YouDress</h2>
+            </Link>
           </div>
-          <button>
-            <h3>new</h3>
-          </button>
-          <button>
-            <h3>sale</h3>
-          </button>
-          <button>
-            <h3>categories</h3>
-          </button>
+          <div className="filter-pages">
+            <button className="button-pages ">
+              <h3 className="button-pages__text">new</h3>
+            </button>
+            <button className="button-pages">
+              <h3 className="button-pages__text">sale</h3>
+            </button>
+            <button className="button-pages">
+              <h3 className="button-pages__text">categories</h3>
+            </button>
+          </div>
           {/* <ul className="dropdown-menu">
             {categories.map((category) => (
               <li key={category} className="dropdown-item">
@@ -30,11 +38,11 @@ function Header({}) {
             ))}
           </ul> */}
         </div>
-        <div className="righthand">
-          <img src={heartSVG} width="40" />
-          <img src={heartSVG} width="40" />
-          <img src={heartSVG} width="40" />
-          <img src={heartSVG} width="40" />
+        <div className="righthand-container">
+          <img className="icon" src={heartSVG} width="40" />
+          <img className="icon" src={accountSVG} width="40" />
+          <img className="icon" src={searchSVG} width="40" />
+          <img className="icon" src={cartSVG} width="40" />
         </div>
       </nav>
     </header>
