@@ -1,5 +1,6 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/typography" as *;
+@use "./styles/partials/mixins" as *;
 
 html {
   box-sizing: border-box;
@@ -34,12 +35,23 @@ a {
   }
 }
 
-button {
-  font-family: "Dosis", sans-serif;
-  // font-weight: 700;
-}
+// button {
+//   font-family: "Dosis", sans-serif;
+//   color: $white;
+//   min-width: 60px;
+//   padding: 8px 15px;
+//   // text-align: center;
+//   border: 2.5px $white solid;
+//   border-radius: 50px;
+//   background-color: $orange;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
 .side-by-side {
-  display: flex;
-  height: 80vh;
+  @include tablet {
+    height: 85vh;
+    display: flex;
+  }
 }

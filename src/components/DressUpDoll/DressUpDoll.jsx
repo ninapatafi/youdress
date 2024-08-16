@@ -16,8 +16,8 @@ function DressUpDoll({ isOpen, setIsOpen, setShowButton }) {
         </button>
       </div>
       <img className="dress-up__doll" src="https://placehold.co/250x400"></img>
-      <button>Reset</button>
-      <button>Randomize</button>
+      <button className="dress-up__reset">Reset</button>
+      <button className="dress-up__randomize">Randomize</button>
     </div>
   );
 }

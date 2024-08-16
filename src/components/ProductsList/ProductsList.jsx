@@ -7,14 +7,14 @@ function ProductsList({ filteredProducts }) {
   const loadProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 18);
   };
-  if (!filteredProducts) {
-    <div>Loading...</div>;
-    return;
-  }
-  if (filteredProducts.length === 0) {
-    <div>No products of this type currently avaliable</div>;
-    return;
-  }
+  // if (!filteredProducts) {
+  //   <div>Loading...</div>;
+  //   return;
+  // }
+  // if (filteredProducts.length === 0) {
+  //   <div>No products of this type currently avaliable</div>;
+  //   return;
+  // }
   return (
     <div className="products-container">
       {filteredProducts.slice(0, visibleProducts).map((product) => (
@@ -34,7 +34,11 @@ function ProductsList({ filteredProducts }) {
         </div>
       ))}
       {visibleProducts < filteredProducts.length && (
-        <button onClick={loadProducts}>Load More</button>
+        <div className="load-more">
+          <button className="load-more__btn" onClick={loadProducts}>
+            Load More
+          </button>
+        </div>
       )}
     </div>
   );

@@ -42,7 +42,9 @@ function Header({}) {
           <img className="icon" src={heartSVG} width="40" />
           <img className="icon" src={accountSVG} width="40" />
           <img className="icon" src={searchSVG} width="40" />
-          <img className="icon" src={cartSVG} width="40" />
+          <Link className="cart-link" to="/cart">
+            <img className="icon" src={cartSVG} width="40" />
+          </Link>
         </div>
       </nav>
     </header>

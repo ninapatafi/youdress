@@ -29,7 +29,7 @@ function DressUpWidget({
 
   const extractCategories = (products) => {
     const categories = {};
-    products.forEach((product) => {
+    products.map((product) => {
       const { category, subcategory } = product;
       if (!categories[category]) {
         categories[category] = new Set();
@@ -37,15 +37,16 @@ function DressUpWidget({
       categories[category].add(subcategory);
     });
 
-    Object.keys(categories).forEach((category) => {
+    Object.keys(categories).map((category) => {
       categories[category] = Array.from(categories[category]);
     });
-
+    // console.log("categories", categories);
     return categories;
   };
 
   const categories = extractCategories(products);
-  console.log(categories);
+
+  // cSonsole.log(categories);
   // console.log(subcategories);
 
   return (
@@ -66,33 +67,43 @@ function DressUpWidget({
       )}
 
       <div className="filter-subcategory">
-        <h5>{selectedCategory} </h5>
-        <ul>
-          {categories[selectedCategory] ? (
-            categories[selectedCategory].map((subcategory) => (
-              <li key={subcategory}>
-                {/* {" "} */}
-                <button onClick={() => handleSubcategoryClick(subcategory)}>
-                  {subcategory}
-                </button>
-              </li>
-            ))
-          ) : (
-            <li>Select A Subcategory</li>
-          )}
-        </ul>
+        <div className="subcategory-section">
+          <h5 className="subcategory-section__title">{selectedCategory} </h5>
+          <ul>
+            {categories[selectedCategory] ? (
+              categories[selectedCategory].map((subcategory) => (
+                <li className="subcategory-section__text" key={subcategory}>
+                  <button
+                    className="subcategory-section__btn"
+                    onClick={() => handleSubcategoryClick(subcategory)}
+                  >
+                    {subcategory}
+                  </button>
+                </li>
+              ))
+            ) : (
+              <li>Select A Subcategory</li>
+            )}
+          </ul>
+        </div>
       </div>
       <div className="filter-category">
-        <div>
-          <h5>category</h5>
-          {Object.keys(categories).map((category) => (
-            <h6 key={category} onClick={() => handleCategoryClick(category)}>
-              <button>{category}</button>
-            </h6>
-          ))}
+        <div className="category-section">
+          <ul>
+            <h5 className="category-section__title">Category</h5>
+            {Object.keys(categories).map((category) => (
+              <li
+                className="category-section__text"
+                key={category}
+                onClick={() => handleCategoryClick(category)}
+              >
+                <button className="category-section__btn">{category}</button>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div>
-          <h5 className="color">color</h5>
+        <div className="color-section">
+          <h5 className="color-section__title">color</h5>
           <div className="color__wrapper">
             <button className="color__black color__button " />
             <button className="color__white color__button " />
@@ -107,7 +118,7 @@ function DressUpWidget({
             <button className="color__orange color__button " />
           </div>
         </div>
-        <div className="size-selection">
+        <div className="size-section">
           <h5>size</h5>
           <button>XS</button>
           <button>S</button>
@@ -116,7 +127,7 @@ function DressUpWidget({
           <button>XL</button>
           <button>XXL</button>
         </div>
-        <div>
+        <div className="price-section">
           <h5>price</h5>
           <h6>under $15</h6>
           <h6>$15-30</h6>

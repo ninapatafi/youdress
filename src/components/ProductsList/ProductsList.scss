@@ -1,3 +1,6 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
 .products-container {
   //   height: 466px;
   display: flex;
@@ -5,9 +8,21 @@
   flex-wrap: wrap;
   gap: 1rem;
   overflow-y: scroll;
-  margin: 1rem 1rem;
+  padding: 1rem 1rem;
   justify-content: center;
   width: 80vw;
+  background-color: $white;
+}
+
+.load-more {
+  display: flex;
+
+  width: 100%;
+  &__btn {
+    margin: auto;
+    @include default-button;
+    background-color: $dark-pink;
+  }
 }
 
 .product-card {

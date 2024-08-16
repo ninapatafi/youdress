@@ -1,12 +1,18 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .dress-up {
   padding-top: 1rem;
   background-color: $white;
-  max-width: 30vw;
+  width: 50%;
   // height: 65vh;
   display: flex;
   flex-direction: column;
+
+  @include tablet {
+    width: 25vw;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -18,24 +24,32 @@
     // display: block;
     font-size: 18px;
     text-align: center;
-    // padding: 10px;
+    padding-bottom: 1rem;
   }
 
   &__toggle {
+    @include default-button;
     // color: $white;
-
-    min-width: 25px;
-    padding: 6px 15px;
-    border: 2.5px $white solid;
-    border-radius: 50px;
+    // min-width: 25px;
+    // padding: 6px 15px;
+    // border: 2.5px $white solid;
+    // border-radius: 50px;
     background-color: $green;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // margin: 5px;
+    margin: 0 5px;
   }
 
   &__doll {
-    margin: 1rem;
+    margin: 1rem 0;
+  }
+
+  &__reset,
+  &__randomize {
+    @include default-button;
+    margin: 0 5px;
+    background-color: $orange;
   }
 }

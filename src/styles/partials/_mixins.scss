@@ -11,3 +11,25 @@
     @content;
   }
 }
+
+@mixin default-button {
+  //category button
+  font-family: "Dosis", sans-serif;
+  color: $white;
+  min-width: 60px;
+  padding: 8px 6px;
+  border: 2.5px $white solid;
+  border-radius: 50px;
+  // background-color: $orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  @include desktop {
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
