@@ -16,7 +16,10 @@ function Header({}) {
           <div className="logo">
             <Link className="logo__back-link" to="/">
               <img className="logo__icon icon" src={starSVG} width="40"></img>
-              <h2 className="logo__title">YouDress</h2>
+              <h2 className="logo__title">
+                <span className="you-text">You</span>
+                <span className="dress-text">Dress</span>
+              </h2>
             </Link>
           </div>
           <div className="filter-pages">

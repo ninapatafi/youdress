@@ -45,6 +45,14 @@
   }
 }
 
+.you-text {
+  color: $light-pink;
+}
+
+.dress-text {
+  color: $pink;
+}
+
 .icon {
   width: 40px;
   @include tablet {
