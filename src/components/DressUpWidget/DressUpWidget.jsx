@@ -68,7 +68,15 @@ function DressUpWidget({
 
       <div className="filter-subcategory">
         <div className="subcategory-section">
-          <h5 className="subcategory-section__title">{selectedCategory} </h5>
+          <h5
+            id="subcategoryTitle"
+            className={`subcategory-section__title ${
+              !selectedCategory ? "hidden" : ""
+            }`}
+          >
+            {selectedCategory}
+            {""}
+          </h5>
           <ul>
             {categories[selectedCategory] ? (
               categories[selectedCategory].map((subcategory) => (
@@ -82,7 +90,9 @@ function DressUpWidget({
                 </li>
               ))
             ) : (
-              <p>Select A Category To View Sub-Categories</p>
+              <p className="subcategory-section__placeholder-text">
+                Select A Category To View Sub-Categories
+              </p>
             )}
           </ul>
         </div>

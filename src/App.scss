@@ -51,7 +51,7 @@ a {
 
 .side-by-side {
   @include tablet {
-    height: 95vh;
+    height: 115vh;
     display: flex;
   }
 }
