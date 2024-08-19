@@ -82,7 +82,7 @@ function DressUpWidget({
                 </li>
               ))
             ) : (
-              <li>Select A Subcategory</li>
+              <p>Select A Category To View Sub-Categories</p>
             )}
           </ul>
         </div>
@@ -103,8 +103,8 @@ function DressUpWidget({
           </ul>
         </div>
         <div className="color-section">
-          <h5 className="color-section__title">color</h5>
-          <div className="color__wrapper">
+          <h5 className="color-section__title">Color</h5>
+          <div className="color">
             <button className="color__black color__button " />
             <button className="color__white color__button " />
             <button className="color__grey color__button " />
@@ -119,20 +119,30 @@ function DressUpWidget({
           </div>
         </div>
         <div className="size-section">
-          <h5>size</h5>
-          <button>XS</button>
-          <button>S</button>
-          <button>M</button>
-          <button>L</button>
-          <button>XL</button>
-          <button>XXL</button>
+          <h5 className="size-section__title">Size</h5>
+          <button className="size-section__btn">XS</button>
+          <button className="size-section__btn">S</button>
+          <button className="size-section__btn">M</button>
+          <button className="size-section__btn">L</button>
+          <button className="size-section__btn">XL</button>
+          <button className="size-section__btn">XXL</button>
         </div>
         <div className="price-section">
-          <h5>price</h5>
-          <h6>under $15</h6>
-          <h6>$15-30</h6>
-          <h6>$30-60</h6>
-          <h6>$60+</h6>
+          <h5 className="price-section__title">Price</h5>
+          <ul>
+            <li>
+              <button className="price-section__btn">under $15</button>
+            </li>
+            <li>
+              <button className="price-section__btn">$15-30</button>
+            </li>
+            <li>
+              <button className="price-section__btn">$30-60</button>
+            </li>
+            <li>
+              <button className="price-section__btn">$60+</button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

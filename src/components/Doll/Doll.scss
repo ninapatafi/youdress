@@ -1,0 +1,62 @@
+#doll-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   position: absolute;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  //   margin: auto;
+  width: 100%;
+  height: 27rem;
+  //   background-repeat: no-repeat;
+  background-image: url("../../assets/dressup-pieces/background.svg");
+}
+
+// #background {
+//   //   position: absolute;
+//   width: 250px;
+//   height: 400px;
+
+//   background-repeat: no-repeat;
+// }
+
+#body {
+  position: absolute;
+  width: 250px;
+  height: 400px;
+  background-image: url("../../assets/dressup-pieces/body1.png");
+  background-repeat: no-repeat;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+}
+
+#face,
+#fronthair,
+#backhair,
+#clothingfull,
+#shoes {
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 400px;
+}
+
+.face1 {
+  background-image: url("../../assets/dressup-pieces/face1.png");
+}
+
+.backhair1 {
+  background-image: url("../../assets/dressup-pieces/backhair1.png");
+}
+
+.fronthair1 {
+  background-image: url("../../assets/dressup-pieces/fronthair1.png");
+}
+.clothingfull1 {
+  background-image: url("../../assets/dressup-pieces/dress_short_pink.png");
+}
+
+.shoes1 {
+  background-image: url("../../assets/dressup-pieces/shoes_heels_pink.png");
+}

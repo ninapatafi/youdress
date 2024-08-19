@@ -55,51 +55,52 @@
 }
 
 .category-section {
+  margin-bottom: 8px;
   &__title {
-    font-size: 1.125rem;
-    padding-bottom: 0.5rem;
-    margin: 0 5px;
+    @include section-title;
   }
 
   &__btn {
     @include default-button;
     margin: 5px auto;
     background-color: $orange;
+    width: 5rem;
   }
 }
 
 .subcategory-section {
+  margin-bottom: 8px;
   &__title {
-    font-size: 1.125rem;
-    padding-bottom: 0.5rem;
-    margin: 0 5px;
+    @include section-title;
   }
 
   &__btn {
     @include default-button;
     margin: 5px auto;
     background-color: $orange;
+    width: 5rem;
   }
 }
 
-.size-selection {
-  display: flex;
-  flex-direction: column;
+.color-section {
+  margin-bottom: 8px;
+  &__title {
+    @include section-title;
+  }
 }
 
 .color {
-  // &__wrapper {
-  // display: flex;
-  // flex-direction: row;
-  // gap: 1rem;
-  // }
-
+  margin: 0 3px;
+  display: flex;
+  /* overflow-wrap: revert-layer; */
+  flex-wrap: wrap;
   &__button {
     border: none;
-    outline: none;
-    height: 20px;
-    width: 20px;
+    outline: 2px $white solid;
+    height: 15px;
+    width: 15px;
     border-radius: 50%;
+    margin: 4px;
   }
 
   &__black {
@@ -135,7 +136,7 @@
   }
 
   &__brown {
-    background-color: brown;
+    background-color: maroon;
   }
 
   &__purple {
@@ -144,5 +145,39 @@
 
   &__orange {
     background-color: darkorange;
+  }
+}
+
+.size-section {
+  margin-bottom: 8px;
+  &__title {
+    @include section-title;
+  }
+  &__btn {
+    margin: 3px;
+    background: orange;
+    border: 2px white solid;
+    padding: 3px 6px;
+    color: white;
+  }
+  // flex-direction: row;
+  // overflow: wrap;
+}
+
+.price-section {
+  margin-bottom: 8px;
+  &__title {
+    @include section-title;
+  }
+
+  &__btn {
+    @include default-button;
+    background-color: $orange;
+    margin: 5px auto;
+    background-color: $orange;
+    width: 5rem;
+    @include desktop {
+      width: 5rem;
+    }
   }
 }

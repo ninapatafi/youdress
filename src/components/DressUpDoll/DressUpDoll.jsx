@@ -1,4 +1,5 @@
 import "./DressUpDoll.scss";
+import Doll from "../Doll/Doll.jsx";
 import { useState } from "react";
 
 function DressUpDoll({ isOpen, setIsOpen, setShowButton }) {
@@ -15,7 +16,8 @@ function DressUpDoll({ isOpen, setIsOpen, setShowButton }) {
           ❮ BACK
         </button>
       </div>
-      <img className="dress-up__doll" src="https://placehold.co/250x400"></img>
+      {/* <img className="dress-up__doll" src="https://placehold.co/250x400"></img> */}
+      <Doll />
       <button className="dress-up__reset">Reset</button>
       <button className="dress-up__randomize">Randomize</button>
     </div>
