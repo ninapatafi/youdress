@@ -9,21 +9,19 @@ import MainPage from "./pages/MainPage/MainPage.jsx";
 import ShoppingCartPage from "./pages/ShoppingCartPage/ShoppingCartPage.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
-// import productsData from "./data/products.json";
-
 function App() {
+  const BASE_URL = import.meta.env.VITE_SERVER_URL;
+
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  // const products = productsData;
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const productsResponse = await axios.get(
-          `http://localhost:5050/products`
-        );
+        const productsResponse = await axios.get(`${BASE_URL}/products`);
         console.log("products response", productsResponse.data);
         setFilteredProducts(productsResponse.data);
         setProducts(productsResponse.data);

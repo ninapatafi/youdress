@@ -1,16 +1,22 @@
 import "./ProductsList.scss";
 // import products from "../../data/products.json";
 import { useState } from "react";
+import cartSVG from "../../assets/icons/cart.svg";
+import heartSVG from "../../assets/icons/heart.svg";
 
 function ProductsList({ filteredProducts }) {
+  const BASE_URL = import.meta.env.VITE_SERVER_URL;
   const [visibleProducts, setVisibleProducts] = useState(9);
   const loadProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 18);
   };
-  // if (!filteredProducts) {
-  //   <div>Loading...</div>;
-  //   return;
-  // }
+  if (!filteredProducts || filteredProducts.length === 0) {
+    return (
+      <div>
+        <h2>Loading...</h2>
+      </div>
+    );
+  }
   // if (filteredProducts.length === 0) {
   //   <div>No products of this type currently avaliable</div>;
   //   return;
@@ -23,13 +29,26 @@ function ProductsList({ filteredProducts }) {
             <div className="image-container">
               <img
                 className="image-container__img"
-                src={`http://localhost:5050/${product.image_url}`}
+                src={`${BASE_URL}/${product.image_url}`}
+                alt={`image of ${product.product_name}`}
               />
+              <button className="product-card__add-cart">
+                <img src={cartSVG} width="20"></img>
+              </button>
+              <button className="product-card__add-fave">
+                <img src={heartSVG} width="20"></img>
+              </button>
             </div>
-            <button>cart</button>
-            <h4>{product.product_name}</h4>
-            <p>{product.description}</p>
-            <p>Price: ${product.price}</p>
+            <div className="product-description">
+              <h4 className="product-description__title">
+                {product.product_name}
+              </h4>
+              {/* <p>{product.description}</p> */}
+              <p className="product-description__price">
+                <span className="product-description__price--bold">Price:</span>{" "}
+                ${product.price}
+              </p>
+            </div>
           </div>
         </div>
       ))}
