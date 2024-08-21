@@ -7,9 +7,25 @@ import heartSVG from "../../assets/icons/heart.svg";
 function ProductsList({ filteredProducts }) {
   const BASE_URL = import.meta.env.VITE_SERVER_URL;
   const [visibleProducts, setVisibleProducts] = useState(9);
+
   const loadProducts = () => {
     setVisibleProducts((prevCount) => prevCount + 18);
   };
+
+  const handleAddToCart = async (product) => {
+    try {
+      const response = await axios.post(`${BASE_URL}/add-to-cart`, {
+        id: product.id,
+        product_name: product.product_name,
+        price: product.price,
+        image_url: product.image_url,
+      });
+      console.log("response add to cart:", response.data);
+    } catch (err) {
+      console.error("Error adding to cart:", err);
+    }
+  };
+
   if (!filteredProducts || filteredProducts.length === 0) {
     return (
       <div>
@@ -32,7 +48,10 @@ function ProductsList({ filteredProducts }) {
                 src={`${BASE_URL}/${product.image_url}`}
                 alt={`image of ${product.product_name}`}
               />
-              <button className="product-card__add-cart">
+              <button
+                onClick={() => handleAddToCart(product)}
+                className="product-card__add-cart"
+              >
                 <img src={cartSVG} width="20"></img>
               </button>
               <button className="product-card__add-fave">

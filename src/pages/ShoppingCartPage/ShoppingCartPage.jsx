@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useParams, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./ShoppingCartPage.scss";
 
@@ -20,11 +20,22 @@ function ShoppingCartPage() {
     getCart();
   }, []);
 
+  const handleDeleteCart = async (productId) => {
+    const response = await axios.delete(`${BASE_URL}/cart/:id`, {
+      data: { id: productId },
+    });
+    console.log("delete cart item", response.data);
+    setCartProducts((prevCartProducts) =>
+      prevCartProducts.filter((product) => product.id !== productId)
+    );
+  };
+
   const totalCost = cartProducts.reduce(
     (acc, product) => acc + product.price * product.quantity,
     0
   );
   console.log(totalCost);
+  const formattedTotalCost = totalCost.toFixed(2);
 
   return (
     <div className="shoppingcart-page">
@@ -39,7 +50,12 @@ function ShoppingCartPage() {
                   src={`${BASE_URL}/${product.image_url}`}
                   alt={`image of ${product.product_name}`}
                 />
-                <button>remove from cart</button>
+                <button
+                  onClick={() => handleDeleteCart(product.id)}
+                  className="product-card__remove"
+                >
+                  remove from cart
+                </button>
               </div>
               <p>Quantity: {product.quantity}</p>
               <div className="product-description">
@@ -56,7 +72,7 @@ function ShoppingCartPage() {
         ))}
       </div>
       <h2>Total Price</h2>
-      <h4>${totalCost}</h4>
+      <h4>${formattedTotalCost}</h4>
       <button>Check Out</button>
     </div>
   );
