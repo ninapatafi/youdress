@@ -1,6 +1,6 @@
 import "./ProductsList.scss";
-// import products from "../../data/products.json";
 import { useState } from "react";
+import axios from "axios";
 import cartSVG from "../../assets/icons/cart.svg";
 import heartSVG from "../../assets/icons/heart.svg";
 

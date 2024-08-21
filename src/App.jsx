@@ -22,7 +22,7 @@ function App() {
     const getProducts = async () => {
       try {
         const productsResponse = await axios.get(`${BASE_URL}/products`);
-        console.log("products response", productsResponse.data);
+        // console.log("products response", productsResponse.data);
         setFilteredProducts(productsResponse.data);
         setProducts(productsResponse.data);
       } catch (err) {
