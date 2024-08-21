@@ -34,16 +34,19 @@ function MainPage({
     if (selectedCategory) {
       if (selectedSubcategory) {
         navigate(`/${selectedCategory}/${selectedSubcategory}`);
+        setFilteredProducts(
+          products.filter(
+            (product) =>
+              product.category === selectedCategory &&
+              product.subcategory === selectedSubcategory
+          )
+        );
       } else {
         navigate(`/${selectedCategory}`);
+        setFilteredProducts(
+          products.filter((product) => product.category === selectedCategory)
+        );
       }
-      setFilteredProducts(
-        products.filter(
-          (product) =>
-            product.category === selectedCategory &&
-            product.subcategory === selectedSubcategory
-        )
-      );
     } else {
       navigate(`/`);
     }
