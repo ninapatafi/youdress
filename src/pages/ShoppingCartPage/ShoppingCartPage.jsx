@@ -21,13 +21,15 @@ function ShoppingCartPage() {
   }, []);
 
   const handleDeleteCart = async (productId) => {
-    const response = await axios.delete(`${BASE_URL}/cart/:id`, {
-      data: { id: productId },
-    });
-    console.log("delete cart item", response.data);
-    setCartProducts((prevCartProducts) =>
-      prevCartProducts.filter((product) => product.id !== productId)
-    );
+    try {
+      const response = await axios.delete(`${BASE_URL}/cart/${productId}`);
+      console.log("delete cart item", response.data);
+      setCartProducts((prevCartProducts) =>
+        prevCartProducts.filter((product) => product.id !== productId)
+      );
+    } catch (err) {
+      console.error("Error deleting item from cart:", err);
+    }
   };
 
   const totalCost = cartProducts.reduce(
@@ -71,9 +73,11 @@ function ShoppingCartPage() {
           </div>
         ))}
       </div>
-      <h2>Total Price</h2>
-      <h4>${formattedTotalCost}</h4>
-      <button>Check Out</button>
+      <div className="cart-info">
+        <h2>Total Price</h2>
+        <h4>${formattedTotalCost}</h4>
+        <button>Check Out</button>
+      </div>
     </div>
   );
 }
