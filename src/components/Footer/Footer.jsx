@@ -16,7 +16,7 @@ function Footer() {
           <p>Craytive</p>
         </ul>
       </div>
-      <h4> created for Brainstation Capstone project</h4>
+      <h4> created for BrainStation Capstone project</h4>
     </footer>
   );
 }

@@ -19,7 +19,6 @@ function DressUpWidget({
 
   const handleSubcategoryClick = (subcategory) => {
     setSelectedSubcategory(subcategory);
-    // Here you would apply the filter logic to filter your items
   };
 
   const toggleWidget = () => {
@@ -46,7 +45,7 @@ function DressUpWidget({
 
   const categories = extractCategories(products);
 
-  // cSonsole.log(categories);
+  // console.log(categories);
   // console.log(subcategories);
 
   return (
@@ -82,7 +81,11 @@ function DressUpWidget({
               categories[selectedCategory].map((subcategory) => (
                 <li className="subcategory-section__text" key={subcategory}>
                   <button
-                    className="subcategory-section__btn"
+                    className={`subcategory-section__btn ${
+                      selectedSubcategory === subcategory
+                        ? "subcategory-section__btn--selected"
+                        : ""
+                    }`}
                     onClick={() => handleSubcategoryClick(subcategory)}
                   >
                     {subcategory}
