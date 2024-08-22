@@ -57,10 +57,16 @@
   }
 
   &__btn {
+    cursor: pointer;
     @include default-button;
     margin: 5px auto;
     background-color: $orange;
     width: 5rem;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $green;
+    }
   }
 }
 
@@ -71,15 +77,26 @@
   }
 
   &__btn {
+    cursor: pointer;
+
     @include default-button;
     margin: 5px auto;
     background-color: $orange;
     width: 5rem;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $green;
+    }
   }
 
   &__placeholder-text {
     @include section-title;
   }
+}
+
+.category-section__btn--selected {
+  background-color: $green;
 }
 
 .hidden {
