@@ -107,7 +107,15 @@ function DressUpWidget({
                 key={category}
                 onClick={() => handleCategoryClick(category)}
               >
-                <button className="category-section__btn">{category}</button>
+                <button
+                  className={`category-section__btn ${
+                    selectedCategory === category
+                      ? "category-section__btn--selected"
+                      : ""
+                  }`}
+                >
+                  {category}
+                </button>
               </li>
             ))}
           </ul>

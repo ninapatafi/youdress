@@ -34,57 +34,59 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <div>placeholder for a banner</div> */}
-      <Header />
-      {/* <AddressGuide /> */}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <MainPage
-              selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
-              selectedSubcategory={selectedSubcategory}
-              setSelectedSubcategory={setSelectedSubcategory}
-              products={products}
-              filteredProducts={filteredProducts}
-              setFilteredProducts={setFilteredProducts}
-            />
-          }
-        />
-        <Route
-          path="/:category"
-          element={
-            <MainPage
-              selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
-              selectedSubcategory={selectedSubcategory}
-              setSelectedSubcategory={setSelectedSubcategory}
-              products={products}
-              filteredProducts={filteredProducts}
-              setFilteredProducts={setFilteredProducts}
-            />
-          }
-        />
-        <Route
-          path="/:category/:subcategory"
-          element={
-            <MainPage
-              selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
-              selectedSubcategory={selectedSubcategory}
-              setSelectedSubcategory={setSelectedSubcategory}
-              products={products}
-              filteredProducts={filteredProducts}
-              setFilteredProducts={setFilteredProducts}
-            />
-          }
-        />
-        <Route path="/cart" element={<ShoppingCartPage />} />
+      <div className="app-container">
+        {/* <div>placeholder for a banner</div> */}
+        <Header />
+        {/* <AddressGuide /> */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <MainPage
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+                selectedSubcategory={selectedSubcategory}
+                setSelectedSubcategory={setSelectedSubcategory}
+                products={products}
+                filteredProducts={filteredProducts}
+                setFilteredProducts={setFilteredProducts}
+              />
+            }
+          />
+          <Route
+            path="/:category"
+            element={
+              <MainPage
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+                selectedSubcategory={selectedSubcategory}
+                setSelectedSubcategory={setSelectedSubcategory}
+                products={products}
+                filteredProducts={filteredProducts}
+                setFilteredProducts={setFilteredProducts}
+              />
+            }
+          />
+          <Route
+            path="/:category/:subcategory"
+            element={
+              <MainPage
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+                selectedSubcategory={selectedSubcategory}
+                setSelectedSubcategory={setSelectedSubcategory}
+                products={products}
+                filteredProducts={filteredProducts}
+                setFilteredProducts={setFilteredProducts}
+              />
+            }
+          />
+          <Route path="/cart" element={<ShoppingCartPage />} />
 
-        <Route path="*" element={<div>404 Page Not Found</div>} />
-      </Routes>
-      <Footer />
+          <Route path="*" element={<div>404 Page Not Found</div>} />
+        </Routes>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

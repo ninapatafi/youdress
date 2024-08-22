@@ -10,10 +10,34 @@
   gap: 1rem;
   overflow-y: scroll;
   padding: 1rem 1rem;
-  // justify-content: center;
+  justify-content: center;
   width: 80vw;
   background-color: $white;
   align-content: flex-start;
+  margin-right: 5px;
+
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #c94277 #ffe1ea;
+
+  /* WebKit-based browsers (Chrome, Safari) scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ffe1ea;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #c94277;
+    border-radius: 10px;
+    border: 2px solid #ffe1ea;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
 }
 
 .load-more {

@@ -51,7 +51,53 @@ a {
 
 .side-by-side {
   @include tablet {
-    height: 115vh;
+    height: 90vh;
     display: flex;
   }
+}
+
+/* Global scrollbar styles for the main page */
+
+/* WebKit-based browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+  width: 16px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #faece6;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #f89225;
+  border-radius: 10px;
+  border: 3px solid #faece6; /* Makes the thumb smaller and creates some spacing */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #f89225;
+}
+
+/* WebKit-based browsers (Chrome, Safari) */
+.app-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.app-container::-webkit-scrollbar-track {
+  background: #faece6;
+}
+
+.app-container::-webkit-scrollbar-thumb {
+  background-color: #f89225;
+  border-radius: 10px;
+  border: 3px solid #faece6;
+}
+
+.app-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Firefox scrollbar styles */
+.app-container {
+  scrollbar-width: thick;
+  scrollbar-color: #f89225 #faece6;
 }
