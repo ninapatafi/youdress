@@ -36,7 +36,7 @@ function ShoppingCartPage() {
     (acc, product) => acc + product.price * product.quantity,
     0
   );
-  console.log(totalCost);
+
   const formattedTotalCost = totalCost.toFixed(2);
 
   const SALES_TAX = 0.05; //Alberta sales tax...
@@ -44,6 +44,18 @@ function ShoppingCartPage() {
   const totalWithTax = totalCost + salesTax;
   const formattedSalesTax = salesTax.toFixed(2);
   const formattedTotalWithTax = totalWithTax.toFixed(2);
+
+  // if (!cartProducts || cartProducts.length === 0) {
+  //   return (
+  //     <div className="emptycart-page">
+  //       {/* <div className="cart-container"> */}
+  //       <h1 className="emptycart-page__title">Your Shopping Cart</h1>
+
+  //       <h2 className="emptycart-page__empty">Your Cart is empty!</h2>
+  //       {/* </div> */}
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="shoppingcart-page">
