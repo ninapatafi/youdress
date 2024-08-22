@@ -39,44 +39,53 @@ function ShoppingCartPage() {
   console.log(totalCost);
   const formattedTotalCost = totalCost.toFixed(2);
 
+  const SALES_TAX = 0.05; //Alberta sales tax...
+  const salesTax = totalCost * SALES_TAX;
+  const totalWithTax = totalCost + salesTax;
+  const formattedSalesTax = salesTax.toFixed(2);
+  const formattedTotalWithTax = totalWithTax.toFixed(2);
+
   return (
     <div className="shoppingcart-page">
-      <h1 className="shoppingcart-page__title">Your Shopping Cart</h1>
       <div className="cart-container">
+        <h1 className="shoppingcart-page__title">Your Shopping Cart</h1>
         {cartProducts.map((product) => (
-          <div className="product-list" key={product.id}>
-            <div className="product-card">
-              <div className="image-container ">
+          <div className="cart-list" key={product.id}>
+            <div className="cart-card">
+              <div className="cart-image-container">
                 <img
-                  className="image-container__img"
+                  className="cart-image-container__img"
                   src={`${BASE_URL}/${product.image_url}`}
                   alt={`image of ${product.product_name}`}
                 />
-                <button
-                  onClick={() => handleDeleteCart(product.id)}
-                  className="product-card__remove"
-                >
-                  remove from cart
-                </button>
               </div>
+
               <p>Quantity: {product.quantity}</p>
-              <div className="product-description">
-                <h4 className="product-description__title">
+              <div className="cart-description">
+                <h4 className="cart-description__title">
                   {product.product_name}
                 </h4>
 
-                <p className="product-description__price">
+                <p className="cart-description__price">
                   Price: ${product.price}
                 </p>
               </div>
+              <button
+                onClick={() => handleDeleteCart(product.id)}
+                className="product-cart__remove"
+              >
+                remove from cart
+              </button>
             </div>
           </div>
         ))}
       </div>
       <div className="cart-info">
-        <h2>Total Price</h2>
-        <h4>${formattedTotalCost}</h4>
-        <button>Check Out</button>
+        <h2 className="cart-info__total">Total Price</h2>
+        <h4 className="cart-info__cost">Subtotal: ${formattedTotalCost}</h4>
+        <h4 className="cart-info__tax">+ Sales Tax ${formattedSalesTax}</h4>
+        <h4 className="cart-info__total-tax">${formattedTotalWithTax}</h4>
+        <button className="cart-info__btn">Check Out</button>
       </div>
     </div>
   );

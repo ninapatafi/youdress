@@ -70,7 +70,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: #f89225;
   border-radius: 10px;
-  border: 3px solid #faece6; /* Makes the thumb smaller and creates some spacing */
+  border: 2px solid #faece6; /* Makes the thumb smaller and creates some spacing */
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -89,7 +89,7 @@ body::-webkit-scrollbar-thumb:hover {
 .app-container::-webkit-scrollbar-thumb {
   background-color: #f89225;
   border-radius: 10px;
-  border: 3px solid #faece6;
+  border: 2px solid #faece6;
 }
 
 .app-container::-webkit-scrollbar-thumb:hover {

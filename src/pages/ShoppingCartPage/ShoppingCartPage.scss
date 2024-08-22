@@ -3,19 +3,19 @@
 
 .shoppingcart-page {
   margin: 1rem;
+  display: flex;
+  min-height: 60vh;
 }
 
 .cart-container {
-  //   //   height: 466px;
-  //   // height: 100vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
-  //   overflow-y: scroll;
+  overflow-y: scroll;
   padding: 1rem 1rem;
   justify-content: flex-start;
-  width: 100%;
+  width: 50%;
   background-color: $white;
 }
 
@@ -34,6 +34,37 @@
 //   height: 35vh;
 //   // background: red;
 // }
+
+.cart-card {
+  background-color: #faece6;
+  /* max-width: 15vw; */
+  height: 12vh;
+  // width: 100%;
+  // border-radius: 25px 25px 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-list {
+  width: 100%;
+}
+
+.cart-image-container {
+  height: 12vh;
+  width: 10vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  &__img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    object-fit: cover;
+  }
+}
 
 // .product-card {
 //   background-color: $peach;
@@ -79,26 +110,83 @@
 //   }
 // }
 
-// .product-description {
-//   padding: 16px 8px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-//   gap: 8px;
+.cart-description {
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
 
-//   &__title {
-//     font-size: 18px;
-//   }
+  &__title {
+    font-size: 18px;
+    width: 170px;
+  }
 
-//   &__price {
-//     &--bold {
-//       font-weight: 500;
-//     }
-//   }
-// }
+  &__price {
+    &--bold {
+      font-weight: 500;
+    }
+  }
+}
 
 .cart-info {
   padding: 4rem 1rem 2rem 1rem;
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+
+.product-cart {
+  &__remove {
+    padding: 8px 15px 25px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Dosis", sans-serif;
+    color: #fdf7fa;
+    // min-width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: flex-end;
+    background-color: #c94277;
+    margin-right: 16px;
+    &:hover {
+      background-color: $dark-pink-alt;
+      cursor: pointer;
+    }
+  }
+}
+
+.cart-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  &__btn {
+    color: $white;
+    width: 100px;
+    padding: 8px 15px;
+    border: 2.5px $white solid;
+    border-radius: 50px;
+    background-color: $orange;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  &__tax {
+    text-decoration: underline;
+  }
+
+  &__total-tax {
+    font-size: 28px;
+  }
 }
