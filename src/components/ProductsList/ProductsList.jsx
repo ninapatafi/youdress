@@ -33,10 +33,7 @@ function ProductsList({ filteredProducts }) {
       </div>
     );
   }
-  // if (filteredProducts.length === 0) {
-  //   <div>No products of this type currently avaliable</div>;
-  //   return;
-  // }
+
   return (
     <div className="products-container">
       {filteredProducts.slice(0, visibleProducts).map((product) => (

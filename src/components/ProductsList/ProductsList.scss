@@ -10,9 +10,10 @@
   gap: 1rem;
   overflow-y: scroll;
   padding: 1rem 1rem;
-  justify-content: center;
+  // justify-content: center;
   width: 80vw;
   background-color: $white;
+  align-content: flex-start;
 }
 
 .load-more {
@@ -26,25 +27,36 @@
   }
 }
 
-.product-list {
-  height: 35vh;
-  // background: red;
-}
+// .product-list {
+//   // // height: 35vh;
+//   // flex: 1 1 calc(25% - 1rem); /* Adjust 25% to control the number of items per row */
+// }
 
 .product-card {
   background-color: $peach;
   max-width: 15vw;
   height: 35vh;
   border-radius: 25px 25px 0 0;
-  //   flex: 1 1 calc(25% - 1rem); // Responsive width, adjust 25% to control the number of items per row
+  // flex: 1 1 calc(25% - 1rem); // Responsive width, adjust 25% to control the number of items per row
+  @include desktop {
+    height: 40vh;
+  }
+
   &__add-fave,
   &__add-cart {
     background: hotpink;
     border: none;
     border-radius: 5px;
     position: absolute;
-
     background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    &:hover {
+      background-color: $dark-pink-alt;
+      cursor: pointer;
+    }
   }
 
   &__add-fave {

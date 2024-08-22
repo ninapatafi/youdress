@@ -42,10 +42,16 @@ function Header({}) {
           </ul> */}
         </div>
         <div className="righthand-container">
-          <img className="icon" src={heartSVG} width="40" />
-          <img className="icon" src={accountSVG} width="40" />
-          <img className="icon" src={searchSVG} width="40" />
-          <Link className="cart-link" to="/cart">
+          <Link className="heart-link header-link" to="/cart">
+            <img className="icon" src={heartSVG} width="40" />
+          </Link>
+          <Link className="account-link header-link" to="/cart">
+            <img className="icon" src={accountSVG} width="40" />
+          </Link>
+          <Link className="search-link header-link" to="/cart">
+            <img className="icon" src={searchSVG} width="40" />
+          </Link>
+          <Link className="cart-link header-link" to="/cart">
             <img className="icon" src={cartSVG} width="40" />
           </Link>
         </div>
