@@ -38,6 +38,10 @@
   }
 }
 
+.righthand-container {
+  display: flex;
+}
+
 .logo {
   display: flex;
   &__back-link {
